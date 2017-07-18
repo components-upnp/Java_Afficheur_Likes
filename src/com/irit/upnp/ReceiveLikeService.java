@@ -1,6 +1,6 @@
 package com.irit.upnp;
 
-import com.irit.xml.LecteurXml;
+import com.irit.xml.LecteurXmlLikes;
 import org.fourthline.cling.binding.annotations.*;
 import org.xml.sax.SAXException;
 
@@ -27,15 +27,16 @@ public class ReceiveLikeService {
         return propertyChangeSupport;
     }
 
-    @UpnpStateVariable(name = "LikedPage")
-    private String likedPage = "";
+    @UpnpStateVariable(name = "Likes")
+    private String likes = "";
 
     @UpnpAction(name = "SetLikes")
-    public void setPageLike(@UpnpInputArgument(name = "LikedPage") String l) throws IOException, SAXException, ParserConfigurationException {
-        likedPage = l;
+    public void setPageLike(@UpnpInputArgument(name = "Likes") String l) throws IOException, SAXException, ParserConfigurationException {
+        String oldValue = likes;
+        likes = l;
 
-        LecteurXml lec = new LecteurXml(likedPage);
+        LecteurXmlLikes lec = new LecteurXmlLikes(likes);
 
-        getPropertyChangeSupport().firePropertyChange("likeReveived", "", lec.getNumPage());
+        getPropertyChangeSupport().firePropertyChange("likeReveived", oldValue, lec.getLikes());
     }
 }

@@ -13,14 +13,14 @@ import java.io.StringReader;
 import java.util.HashMap;
 
 /**
- * Created by mkostiuk on 17/07/2017.
+ * Created by mkostiuk on 18/07/2017.
  */
-public class LecteurXml {
+public class LecteurXmlLikes {
 
     private String udn;
     private HashMap<String,String> likes;
 
-    public LecteurXml(String xml) throws ParserConfigurationException, SAXException, IOException {
+    public LecteurXmlLikes(String xml) throws ParserConfigurationException, SAXException, IOException {
 
         SAXParserFactory spf = SAXParserFactory.newInstance();
         SAXParser sp = spf.newSAXParser();
@@ -86,4 +86,5 @@ public class LecteurXml {
     public HashMap<String, String> getLikes() {
         return likes;
     }
+
 }
