@@ -37,6 +37,6 @@ public class PageService {
 
         LecteurXmlPage lec = new LecteurXmlPage(page);
 
-        getPropertyChangeSupport().firePropertyChange("likeReveived", oldValue, lec.getNumPage());
+        getPropertyChangeSupport().firePropertyChange("page", oldValue, lec.getNumPage());
     }
 }

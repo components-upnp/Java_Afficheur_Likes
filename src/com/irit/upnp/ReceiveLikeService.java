@@ -37,6 +37,6 @@ public class ReceiveLikeService {
 
         LecteurXmlLikes lec = new LecteurXmlLikes(likes);
 
-        getPropertyChangeSupport().firePropertyChange("likeReveived", oldValue, lec.getLikes());
+        getPropertyChangeSupport().firePropertyChange("likes", oldValue, lec.getLikes());
     }
 }

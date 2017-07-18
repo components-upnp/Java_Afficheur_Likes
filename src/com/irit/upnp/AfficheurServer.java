@@ -1,5 +1,6 @@
 package com.irit.upnp;
 
+import com.irit.display.Fenetre;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.binding.annotations.AnnotationLocalServiceBinder;
@@ -72,7 +73,7 @@ public class AfficheurServer implements Runnable {
                 new DefaultServiceManager<>(receiveLikeService,ReceiveLikeService.class)
         );
 
-        //new Fenetre()
+        new Fenetre(pageService,receiveLikeService).setVisible(true);
 
         return new LocalDevice(
                 identity, type, details,
