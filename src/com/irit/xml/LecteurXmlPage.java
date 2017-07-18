@@ -10,7 +10,6 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.HashMap;
 
 /**
  * Created by mkostiuk on 18/07/2017.
@@ -56,8 +55,7 @@ public class LecteurXmlPage {
     }
 
     public String getNumPage() {
-        String page = new String();
-        return page;
+        return numPage;
     }
 
     public String getUdn() {

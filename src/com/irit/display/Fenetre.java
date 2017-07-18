@@ -9,8 +9,6 @@ import com.irit.upnp.PageService;
 import com.irit.upnp.ReceiveLikeService;
 import org.fourthline.cling.model.meta.LocalService;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.HashMap;
 
 /**
@@ -21,7 +19,7 @@ public class Fenetre extends javax.swing.JFrame {
 
     private LocalService<PageService> pageService;
     private LocalService<ReceiveLikeService> receiveLikeService;
-    private String pageCourante = "";
+    private String pageCourante = "0";
     private HashMap<String,String> likes;
 
     /**
@@ -46,6 +44,7 @@ public class Fenetre extends javax.swing.JFrame {
                 evt -> {
                     if (evt.getPropertyName().equals("likes")) {
                         likes = (HashMap<String,String>) evt.getNewValue();
+                        System.out.println(likes);
                         refreshView();
                     }
                 }
