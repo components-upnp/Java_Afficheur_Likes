@@ -33,7 +33,7 @@ public class LecteurXmlPage {
             public void startElement(String uri, String localName, String qName, Attributes attributes) {
                 if (qName.equalsIgnoreCase("UDN"))
                     isUdn = true;
-                if (qName.equalsIgnoreCase("PAGE"))
+                if (qName.equalsIgnoreCase("PAGECOURANTE"))
                     isPage = true;
             }
 

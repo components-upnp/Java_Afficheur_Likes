@@ -35,6 +35,7 @@ public class Fenetre extends javax.swing.JFrame {
                 evt -> {
                     if (evt.getPropertyName().equals("page")) {
                         pageCourante = (String) evt.getNewValue();
+                        System.out.println("Affichage likes page " + pageCourante);
                         refreshView();
                     }
                 }
@@ -52,7 +53,10 @@ public class Fenetre extends javax.swing.JFrame {
     }
 
     public void refreshView() {
-        afficheurNbLikes.setText(likes.get(pageCourante));
+        if (likes.get(pageCourante) != null)
+            afficheurNbLikes.setText(likes.get(pageCourante));
+        else
+            afficheurNbLikes.setText("0");
     }
 
     /**
