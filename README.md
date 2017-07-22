@@ -19,9 +19,11 @@ Pour générer celui-ci, lancer la phase maven install de projet.
 Ce composant présente le service UPnP ReceiveLikeService et PageService dont voici la description :
 
   1) PageService :
+  
     a) public void setPage(String page) : reçoit un message XML par UPnP contenant le numéro de la slide courante.
     
   2) ReceiveLikeService :
+  
     a) public void setPageLike(String likes) : reçoit un message XML par UPnP contenant l'ensemble des slides et leur likes
     respectifs.
     
